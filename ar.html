@@ -1,1 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>AR – Padrão 2035</title>
+
+    <!-- Carrega as bibliotecas de AR -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <style>
+      body,html{margin:0;height:100%;background:#000}
+      .overlay{position:fixed;left:0;right:0;top:0;padding:10px 12px;color:#fff;
+               background:linear-gradient(180deg,rgba(0,0,0,.6),transparent);font:14px system-ui}
+    </style>
+  </head>
+
+  <body>
+    <div class="overlay">
+      Aponte a câmera para o marcador “Hiro” 👇  
+      (baixe em: https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png)
+    </div>
+
+    <!-- Cena de realidade aumentada -->
+    <a-scene embedded vr-mode-ui="enabled:false" renderer="antialias:true;alpha:true"
+             arjs="sourceType: webcam; debugUIEnabled:false;">
+
+      <!-- O marcador 'hiro' é o ponto onde o painel aparece -->
+      <a-marker preset="hiro">
+        <a-box width="0.6" height="0.4" depth="0.02" color="#f8fafc" position="0 0.02 0"></a-box>
+
+        <a-text value="Resumo em 30s" align="center" width="1.2" color="#0f172a" position="0 0.18 0.02"></a-text>
+
+        <a-text
+          value="Segurança cibernética começa pela gestão.\nAdapta por perfil → reduz carga cognitiva → gera ação."
+          align="center" width="1.1" color="#334155" position="0 0.08 0.02">
+        </a-text>
+
+        <a-text value="Riscos principais:" align="center" width="1.2" color="#0f172a" position="0 -0.02 0.02"></a-text>
+
+        <a-text
+          value="• Acesso remoto sem MFA\n• Firmware desatualizado\n• Credenciais compartilhadas"
+          align="center" width="1.1" color="#1f2937" position="0 -0.10 0.02">
+        </a-text>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
 
